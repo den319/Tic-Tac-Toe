@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE= edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tic Tac Toe</title>
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Inconsolata:wght@300&family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="styles.css">
+        <script defer src="script.js"></script>
+    </head>
+
+    <body>
+        <main>
+
+            <!--starting page -->
+
+                <div class="starting-page">
+                    <div class="heading-container">
+                        <h1> Tic Tac Toe </h1>
+                        <p class="text">Enter Player's Name</p>
+                        <div class="player-input">
+                            <label for="player1">Player-1</label>
+                            <input type="text" id="player1" value="Player1" autocomplete="off" required>
+                        </div>
+                        <div class="player-input">
+                            <label for="player2">Player-2</label>
+                            <input type="text" id="player2" value="Player2" autocomplete="off" required>
+                        </div>
+                        <button class="start reset">Let's Start</button>
+                    </div>
+                </div>
+
+            <!-- game page -->
+
+                <h1 id="grid-title"> Tic Tac Toe </h1>
+                <div id="grid"> 
+                    <button class="btn" id="1"></button>
+                    <button class="btn" id="2"></button>
+                    <button class="btn" id="3"></button>
+                    <button class="btn" id="4"></button>
+                    <button class="btn" id="5"></button>
+                    <button class="btn" id="6"></button>
+                    <button class="btn" id="7"></button>
+                    <button class="btn" id="8"></button>
+                    <button class="btn" id="9"></button>    
+                </div>
+
+            <!-- player's turn -->
+
+                <div class="player-turn-message">
+                    <p class="player-turn">Player-1 turn</p>
+                </div>
+
+            <!-- game over section -->
+
+                <div class="game-over-section">
+                    <div class="game-over">
+                        <span class="close-btn">X</span>
+                        <h3>Game Over</h3>
+                        <p class="game-over-message"></p>
+                        <button class="reset">Play Again!</button>
+                    </div>
+                </div>
+
+            <!-- reset button -->
+
+                <button class="reset restart">Restart</button>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,256 @@
+
+:root {
+    --green: #8eff5e;
+    --red: #ff1e00;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: white;
+    display: grid;
+    height: 100vh;
+
+}
+
+    main {
+        margin: auto;
+        width: 40%;
+        min-width: 25rem;
+    }
+
+    /* starting page section */
+        .starting-page {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+
+        }
+
+            .heading-container {
+                width: 600px;
+                height: 450px;
+                box-shadow: 0 0 1rem rgba(0, 0, 0, 0.15);
+            }
+
+                h1 {
+                    text-align: center;
+                    margin: 2rem;
+                    font-size: 3rem;
+                    color: #333;
+                }
+
+                p.text {
+                    text-align: center;
+                    margin-bottom: 3rem;
+                    font-size: 1.3rem;
+                }
+
+                .player-input {
+                    width: 90%;
+                    margin-bottom: 1.5rem;
+                    font-size: 1.3rem;
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    place-items: center;
+                }
+
+                    label {
+                        margin: auto;
+                    }
+                    input {
+                        width: 100%;
+                        padding: 0.4rem 0.5rem;
+                        outline: none;
+                        font-size: 1.2rem;
+                        border: 1px solid #000000;
+                        font-family: inherit;
+                        /* text-transform: uppercase; */
+                    }
+    /* game section */
+
+        #grid-title {
+            display: none;
+        }
+        #grid {
+            display: none;
+            grid-template-columns: repeat(3, 8.5rem);
+            place-content: center;
+        }
+
+                .btn {
+                    font-size: 4rem;
+                    margin: 10%;
+                    color: white;
+                    height: 7rem;
+                    width: 7rem;
+                    background-color: rgb(255, 214, 126);
+                    border: 1px solid white;
+                    box-shadow: -5px 5px 5px rgba(0,0,0,0.3);
+                    border-radius: 10px;
+                    cursor: pointer;
+                    text-align: center;
+                    transition: all 0.3s ease 0s;
+                }
+
+                    .btn:hover {
+                        background-color: rgb(255, 174, 0);
+                        transform: translate(-5px, 5px);
+                        box-shadow: -2px 2px 5px rgba(0,0,0,0.9);
+                    }
+
+    /* player's turn */
+
+        p.player-turn {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem 0 1rem;
+            font-size: 25px;
+        }
+
+    /* game over section */
+
+        .reset {
+            display: block;
+            margin: 2rem auto;
+            padding: 0.2rem 1rem 0.5rem;
+            font-size: 1.5rem;
+            letter-spacing: 0.1rem;
+            background-color: transparent;
+            border-radius: 0.3rem;
+            transition: all 0.3s ease;
+            box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15);
+            color: #000;
+            background-color: transparent;
+            border: 2px solid;
+        }
+            .reset:hover {
+                background-color: #000000;
+                color: #fff;
+                transform: scale(1.07);
+            }
+
+            .restart {
+                display: none;
+            }
+
+        .player-selected {
+            box-shadow: -5px 5px rgba(0, 0, 0, 0.25);
+        }
+            .player-selected:hover {
+                transform: translate(0, 0);
+                box-shadow: -5px 5px rgba(0, 0, 0, 0.25);
+            }
+
+        .game-over-section {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            height: 100vh;
+            width: 100vw;
+            display: none;
+        }
+
+            .game-over {
+                transition: all 0.3s ease;
+                transform: scale(0);
+                height: 20rem;
+                width: 60vw;
+                margin: auto;
+                background: linear-gradient(45deg, #a2d5ab -50%, #e5efc1 100%);
+                font-size: 1.5rem;
+                text-align: center;
+                position: relative;
+                padding: 1%;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                border-radius: 10px;
+            }
+
+                .close-btn {
+                    display: inline-block;
+                    position: absolute;
+                    top: 1rem;
+                    right: 1rem;
+                    cursor: pointer;
+                    height: 2rem;
+                    width: 2rem;
+                    border-radius: 50%;
+                    font-size: 1.3rem;
+                    text-align: center;
+                    border: 2px solid black;
+                    overflow: hidden;
+                }
+
+                    .close-btn:hover {
+                        color: white;
+                        background-color: #000000;
+                    }
+                
+            .game-over .reset {
+                margin: 0 auto;
+            }
+            .game-over-section.active {
+                display: grid;
+            }
+            .game-over-section.active .game-over {
+                transform: scale(1);
+            } 
+        .red {
+            background-color: var(--red);
+        }
+        .red:hover {
+            background-color: var(--red);
+        }
+        .green {
+            background-color: var(--green);
+        }
+        .green:hover {
+            background-color: var(--green);
+        }
+
+
+
+@media (max-width: 650px) {
+    html {
+        font-size: 85%;
+    }
+    .heading-container {
+        width: 400px;
+        height: 375px;
+    }
+}
+        
+@media (max-width: 420px) {
+    html {
+        font-size: 60%;
+    }
+    .heading-container {
+        width: 270px;
+        height: 270px;
+    }
+}
+        
+
+
+
+           
+
+            
